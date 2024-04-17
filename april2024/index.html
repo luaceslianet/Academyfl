@@ -1,8 +1,22 @@
 <! DOCTYPE html>
 <html>
 <head>
-<title>Lianet's web page</title>
+<title>Products</title>
 <style>
+    h1{
+        text-align: center;
+    }
+    .center{
+        margin: auto;
+        width: 50%;
+    }
+    .returns{
+       background-color: black;
+       color: white;
+       padding: 10px;
+       text-align: center;
+       margin-bottom: 10px;
+    }
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
@@ -18,54 +32,86 @@
     tr:nth-child(even) {
       background-color: #dddddd;
     }
+    #myHeader {
+      background-color: lightblue;
+      color: black;
+      padding: 40px;
+      text-align: center;
+    }
+    #featured{
+      background-color: cyan;
+      color: black;
+      padding: 20px;
+      text-align: center; 
+    } 
     </style>
 </head>
 <body>
-<h1>Mike's classes</h1>
-<p>Mike's classes are awesome</p>
+<h1 id="myHeader">Welcome to my online store</h1>
+<h3 id="featured">Featured Products</h3>
+<p>Best prices!</p>
 <a href="https://academyfl.com/" target="_blank">The Academy of South Florida</a>
 <blockquote style="background-color:black;color:white" cite="https://www.quotes.com">
 This is an example of blockquote
 </blockquote>
 <q>Life is wonderful!</q>
-<img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="250">
-
+<br>
+<div class="center"><img src="https://static4.depositphotos.com/1005858/380/i/450/depositphotos_3802567-stock-photo-teenage-fashion-store.jpg"></div>
+<br>
 <table>
     <tr>
       <th>Product name</th>
       <th>Size</th>
       <th>Color</th>
+      <th>Price</th>
     </tr>
     <tr>
       <td>Polo</td>
       <td>S</td>
       <td>Blue</td>
+      <td>15.99</td>
     </tr>
     <tr>
       <td>Pants</td>
       <td>XL</td>
       <td>Red</td>
+      <td>20.99</td>
     </tr>
     <tr>
       <td>Shirt</td>
       <td>M</td>
       <td>Black</td>
+      <td>17.99</td>
     </tr>
     <tr>
       <td>Tie</td>
       <td>Unisex</td>
       <td>Gray</td>
+      <td>10.99</td>
     </tr>
     <tr>
       <td>Scarf</td>
       <td>Unisex</td>
       <td>Pink</td>
+      <td>12.99</td>
     </tr>
     <tr>
       <td>Skirt</td>
       <td>L</td>
       <td>Green</td>
+      <td>17.99</td>
     </tr>
   </table>
+  <br>
+  <div class="returns">
+    <h2>Returns</h2>
+    <p>All returns are welcome</p>
+    <p>Check your receipt for restocking fees</p>
+  </div>
+  <div class="returns">
+    <h2>Warranty</h2>
+    <p>All products are warrantied for 45 days, no questions asked</p>
+    <p>1 year manufactured</p>
+  </div>
 </body>
 </html>
