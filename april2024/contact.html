@@ -1,0 +1,131 @@
+<! DOCTYPE html>
+<html>
+<head>
+<title>Products</title>
+<style>
+    h1{
+        text-align: center;
+    }
+    .menu{
+        text-align: center;
+        background-color:bisque;
+        padding: 10px;
+    }
+    .menu a{
+        color: #000000;
+        text-decoration: none;  
+    }
+    .returns{
+       background-color: black;
+       color: white;
+       padding: 10px;
+       text-align: center;
+       margin-bottom: 10px;
+    }
+    .returns a{
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+     .copyright{
+        background-color: gray;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    }
+    .item{
+        background-color: #FFFFFF;
+        padding: 15px;
+        float:left;
+        text-align: center;
+        border-radius: 5px;
+        border: 1px solid #000000;
+        margin: 10px;
+    }
+    .img{
+        width: 100%;
+    }
+    .price
+    {
+        color:darkred;
+        width: 100%;
+    }
+    .item_list{
+
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    #myHeader {
+      background-color: lightblue;
+      color: black;
+      padding: 40px;
+      text-align: center;
+    }
+    #featured{
+      background-color: cyan;
+      color: black;
+      padding: 20px;
+      text-align: center; 
+    } 
+    .contact_form{
+      background-color: lightgray;
+      border-radius: 5px;
+      width: 30%;
+      margin: auto;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="myHeader">Welcome to my online store</h1>
+    </header>
+    <nav>
+        <div class="menu">
+            <a href="index.html">Home</a> | <a href="shop.html">Shop</a> | <a href="contact.html">Contact</a>
+        </div>
+   
+    </nav>
+    <br>
+    <div class="contact_form">
+      <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br>
+        <label for="findus">How did you find us?:</label><br>
+        <select name="findus">
+          <option>Google</option>
+          <option>Flyer</option>
+        </select><br>
+        <label for="comsents">Comments:</label><br>
+        <textarea></textarea><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  
+    <footer>
+        <div class="returns">
+            <a href="returns.html">Return Policy</a><br>
+            <a href="privacy.html">Privacy Policy</a><br>
+            <a href="terms.html">Terms and conditions</a>
+        </div>
+        <div class="copyright">
+            <p>All rights reserved.</p>
+        </div>
+    </footer>    
+</body>
+</html>
