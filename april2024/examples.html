@@ -1,0 +1,269 @@
+<! DOCTYPE html>
+<html>
+<head>
+    <title>Examples</title>
+</head>
+ <body>
+        <!-- Price Start -->
+        <div class="price" id="arrays">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>Arrays examples</p>
+                </div>
+                <div class="row card" style="margin-bottom: 10px;">
+                    <label for="make">Make</label>
+                    <input id="make" name="make" type="text"/>
+                    <label for="model">Model</label>
+                    <input id="model" name="model" type="text"/>
+                    <label for="year">Year</label>
+                    <input id="year" name="year" type="text"/>
+                    <label for="color">Color</label>
+                    <input id="color" name="color" type="text"/>
+                    <hr>
+                    <button style="width: 20%;" onclick="showCarData()">Show</button>
+                    <hr>
+                    <p id="demo"></p>
+                </div>
+                <div class="row">
+                    <div>
+                        <input type="text" name="element" id="element" value="" placeholder="Element to add">
+                        <button onclick="myFunction()">Add</button>
+                    </div>
+                    <div id="added_elements"></div>
+                </div>
+                <div class="row">
+                    <button onclick="performAction('pop')">Pop</button>
+                    <button onclick="performAction('shift')">Shift</button>
+                    <button onclick="performAction('concat')">Concat</button>
+                    <button onclick="performAction('slice')">Slice</button>
+                    <p id="output"></p>
+                </div>
+                <div class="row">
+                    <p id="datetime"></p>
+                </div>
+                <div class="row">
+                    <button onclick="sortArray()">Sort Ascending</button>
+                    <button onclick="reverseArray()">Sort Descending</button>
+                    <p>&nbsp;Array: <span id="arrayDisplay"></span></p>
+                </div>
+                <div class="row">
+                    <p id="loop1"></p>
+                    <p id="loop2"></p>
+                    <p id="loop3"></p>
+                    <p id="loop4"></p>
+                    
+                </div>
+                <div class="row">
+                    <button onclick="hello()">Say hello</button>
+                    <p id="hello"></p>
+                </div>
+                <div class="row">
+                    <p>Please input a number between 25 and 50:</p>
+                    <input id="test" type="text"></p>
+                    <button type="button" onclick="testInput()">Test Input</button>
+                    <div id="message"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Price End -->
+        <script>
+        class Car {
+            constructor(make,model, year,color) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+                this.color = color;
+            }
+            age(x) {
+                let calcAge = x - this.year;
+                try{
+                    console.log(calcAge);
+                    if(calcAge < 0)
+                    {
+                        throw "The year of the car must be less than "+ x;
+                    }
+                }
+                catch(err) {
+                    alert(err);
+                    return "-";
+                }
+                return calcAge;
+                
+            }
+        }
+
+       
+        function showCarData()
+        {
+            const date = new Date();
+            let currentYear = date.getFullYear();
+            
+            const make = document.getElementById("make").value;
+            const model = document.getElementById("model").value;
+            const year = document.getElementById("year").value;
+            const color = document.getElementById("color").value;
+
+            const myCar = new Car(make,model, year,color);
+            const carAge = myCar.age(currentYear);
+            let warranty = "";
+            if(carAge > 5)
+            {
+              warranty=" You must use a warranty.";
+            }
+            document.getElementById("demo").innerHTML=
+            "Your car is a " + myCar.color + " " + myCar.make + " "+ myCar.model + ". It is " + carAge + " years old." + warranty;
+        }
+      
+
+
+        function testInput() {
+        const message = document.getElementById("message");
+        message.innerHTML = "";
+        let x = document.getElementById("test").value;
+        try { 
+            if(x.trim() == "")  throw "is empty";
+            if(isNaN(x)) throw "is not a number";
+            x = Number(x);
+            if(x > 50)   throw "is too high";
+            if(x < 25)  throw "is too low";
+        }
+        catch(err) {
+            message.innerHTML = "Input " + err;
+        }
+        finally {
+            document.getElementById("message").value = "";
+        }
+        }
+        function hello()
+        {
+          document.getElementById("hello").innerHTML="Hello World";
+          document.getElementById("hello").style.color = "red";
+          document.getElementById("hello").style.marginLeft = "20px";
+          document.getElementById("hello").style.backgroundColor = "#f1f1f1";
+          document.getElementById("hello").style.padding = "5px";
+        }
+
+        let language = "Example";
+
+        let inputText = "";
+        for (let x of language) {
+            inputText += x + "<br>";
+        }
+        document.getElementById("loop1").innerHTML = inputText;
+
+        let inputText1 = "";
+        for (let i = 0; i < 5; i++) {
+             inputText1 += "The number is " + i + "<br>";
+        }
+        document.getElementById("loop2").innerHTML = inputText1;
+
+        const person = {fname:"Lianet", lname:"Luaces", age:40}; 
+
+        let txt = "";
+        for (let x in person) {
+        txt += person[x] + " ";
+        }
+        document.getElementById("loop2").innerHTML = txt;
+
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            function updateDateTime() {
+                let now = new Date();
+                document.getElementById('datetime').innerHTML = 'Year: ' + now.getFullYear() + 'Month: '+ months[now.getMonth()]+ 'Day: '+ now.getDate()+' Time: ' + now.getHours() +':' + now.getMinutes() + ':' + now.getSeconds();
+            }
+            
+    
+            setInterval(updateDateTime, 1000);
+            
+
+            updateDateTime();
+
+        ///////////////////
+
+            const fruits = ["Banana", "Orange", "Apple"];
+            let text = "";
+    
+            function updateList() {
+                document.getElementById("added_elements").innerHTML = text;
+            }
+    
+            function myList(array) {
+                text = "<ul>";
+                array.forEach(myListItem);
+                text += "</ul>";
+                updateList();
+            }
+    
+            function myListItem(value) {
+                text += "<li>" + value + "</li>";
+            }
+    
+            function myFunction() {
+                const newFruit = document.getElementById("element").value;
+                if (newFruit === "") {
+                    alert("The element cannot be empty.");
+                } else {
+                    fruits.push(newFruit);
+                    myList(fruits);
+                }
+                document.getElementById("element").value = "";
+            }
+    
+            myList(fruits);
+
+
+            //////////////
+
+            let myArray = ["Mary", "Pete", "John", "Michael", "Daniel"];
+            output.innerHTML = "Initial array: "+myArray.toString();
+
+            function performAction(action) {
+                let output = document.getElementById('output');
+                let result;
+                               
+                switch(action) {
+                    case 'pop':
+                        result = myArray.pop();
+                        output.innerHTML = 'Popped element: ' + result;
+                        break;
+                    case 'shift':
+                        result = myArray.shift();
+                        output.innerHTML = 'Shifted element: ' + result;
+                        break;
+                    case 'concat':
+                        let newArray = ["Susan", "Alex", "Cathy"];
+                        result = myArray.concat(newArray);
+                        output.innerHTML = 'Concatenated array: ' + result;
+                        break;
+                    case 'slice':
+                        result = myArray.slice(1, 3);
+                        output.innerHTML = 'Sliced array: ' + result;
+                        break;
+                    default:
+                        output.innerHTML = 'Invalid action';
+                }
+                
+            
+            }
+            ////////////
+
+            let array = [5, 2, 8, 1, 9, 10,4];
+
+                function displayArray() {
+                    document.getElementById('arrayDisplay').innerHTML = array.join(', ');
+                }
+
+                function sortArray() {
+                    array.sort((a, b) => a - b); 
+                    displayArray();
+                }
+
+                function reverseArray() {
+                    array.sort((a, b) => b -a); 
+                    displayArray();
+                }
+
+                
+                displayArray();
+        </script>
+        </body>     
+        </html>
