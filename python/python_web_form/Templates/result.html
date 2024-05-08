@@ -4,10 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .welcome-message {
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+        }
+    </style>    
 </head>
 <body>
-    <h1>Result</h1>
-    <p>{{ welcome_message }}</p>
-    <p>{{ message }}</p>
+    <div class="container">
+        <h1>Result</h1>
+        <p class="welcome-message">{{ welcome_message }}</p>
+        {% if message %}
+        <p class="error">{{ message }}</p>
+        {% endif %}
+    </div>
 </body>
 </html>

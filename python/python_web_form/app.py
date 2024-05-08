@@ -18,6 +18,9 @@ def index():
         # Validate City input
         if not city.isalpha():
             message = "Enter a valid city"
+        if not first_name.isalpha():
+            message = "Enter a valid name"
+            
 
         welcome_message = f"Hello {first_name} {last_name}, I see that your date of birth is {dob}"
 
